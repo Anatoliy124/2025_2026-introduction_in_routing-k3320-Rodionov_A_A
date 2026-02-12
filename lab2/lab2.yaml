@@ -1,0 +1,56 @@
+name: lab2
+mgmt:
+  network: custom_mgmt
+  ipv4-subnet: 172.16.16.0/24
+
+topology:
+  kinds:
+    vr-ros:
+      image: vrnetlab/mikrotik_routeros:6.47.9
+
+  nodes:
+    R1.BERLIN:
+      kind: vr-ros
+      mgmt-ipv4: 172.16.16.103
+      startup-config: config/R1.BERLIN.rsc
+    R1.FRANKFURT:
+      kind: vr-ros
+      mgmt-ipv4: 172.16.16.102
+      startup-config: config/R1.FRANKFURT.rsc
+    R1.MOSCOW:
+      kind: vr-ros
+      mgmt-ipv4: 172.16.16.101
+      startup-config: config/R1.MOSCOW.rsc
+    pc:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 172.16.16.2
+      binds:
+        - ./config:/config
+      exec:
+        - sh /config/pc.sh
+    PC2:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 172.16.16.3
+      binds:
+        - ./config:/config
+      exec:
+        - sh /config/pc.sh
+    PC3:
+      kind: linux
+      image: alpine:latest
+      mgmt-ipv4: 172.16.16.4
+      binds:
+        - ./config:/config
+      exec:
+        - sh /config/pc.sh
+
+  links:
+    - endpoints: ["R1.BERLIN:eth1","R1.MOSCOW:eth2"]
+    - endpoints: ["R1.BERLIN:eth2","R1.FRANKFURT:eth1"]
+    - endpoints: ["R1.MOSCOW:eth1","R1.FRANKFURT:eth2"]
+    - endpoints: ["R1.BERLIN:eth3","PC3:eth1"]
+    - endpoints: ["R1.FRANKFURT:eth3","PC2:eth1"]
+    - endpoints: ["R1.MOSCOW:eth3","pc:eth1"]
+
