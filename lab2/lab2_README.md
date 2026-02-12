@@ -76,7 +76,7 @@ topology:
     - endpoints: ["R1.MOSCOW:eth3","pc:eth1"]
 ```
 
-![Топология сети](./PHOTO/topology.png)
+![Топология сети](./PHOT/topology.png)
 
 ### Деплой
 
