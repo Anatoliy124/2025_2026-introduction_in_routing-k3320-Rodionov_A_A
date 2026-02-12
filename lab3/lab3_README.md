@@ -88,7 +88,7 @@ topology:
     - endpoints: ["R01.NY:eth3", "SGI-PRISM:eth1"]
 ```
 
-![Топология](images/topology.png)
+![Топология](PHOT/topology.png)
 
 
 
