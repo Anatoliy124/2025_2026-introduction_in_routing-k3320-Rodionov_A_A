@@ -1,0 +1,14 @@
+# Containerlab служебные файлы
+clab-*/
+.*.bak
+
+# Docker/vrnetlab временные файлы
+images/*.vmdk
+images/vrnetlab.py
+images/healthcheck.py
+images/launch.py
+
+# Системные файлы
+.DS_Store
+*.swp
+*~
