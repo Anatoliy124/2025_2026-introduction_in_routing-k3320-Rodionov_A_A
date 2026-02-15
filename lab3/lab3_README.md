@@ -193,7 +193,7 @@ round-trip min/avg/max = 2.391/2.540/2.647 ms
 Доказательство работы OSPF:
 
 ```
-[panindv@R01.HKI] > ip route print 
+[tolya@R01.HKI] > ip route print 
 Flags: X - disabled, A - active, D - dynamic, C - connect, S - static, r - rip, b - bgp, o - ospf, m - mme, B - blackhole, U - unreachable, P - prohibit 
  #      DST-ADDRESS        PREF-SRC        GATEWAY            DISTANCE
  0 ADC  10.10.1.0/30       10.10.1.2       ether2                    0
