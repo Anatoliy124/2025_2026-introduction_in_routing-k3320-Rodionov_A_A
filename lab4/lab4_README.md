@@ -203,7 +203,7 @@ round-trip min/avg/max = 0.141/0.196/0.276 ms
 Работа OSPF:
 
 ```
-[tolya@R01.SPB] > ip route print 
+[panindv@R01.SPB] > ip route print 
 Flags: X - disabled, A - active, D - dynamic, C - connect, S - static, r - rip, b - bgp, o - ospf, m - mme, B - blackhole, U - unreachable, P - prohibit 
  #      DST-ADDRESS        PREF-SRC        GATEWAY            DISTANCE
  0 ADC  10.100.1.1/32      10.100.1.1      br100                     0
@@ -230,7 +230,7 @@ Flags: X - disabled, A - active, D - dynamic, C - connect, S - static, r - rip, 
 Работы MPLS:
 
 ```
-[tolya@R01.SPB] > mpls forwarding-table print 
+[panindv@R01.SPB] > mpls forwarding-table print 
 Flags: H - hw-offload, L - ldp, V - vpls, T - traffic-eng 
  #    IN-LABEL                                      OUT-LABELS                                   DESTINATION                    INTERFACE                                   NEXTHOP        
  0    expl-null                                    
@@ -252,7 +252,7 @@ Flags: H - hw-offload, L - ldp, V - vpls, T - traffic-eng
 Работа iBGP:
 
 ```
-[tolya@R01.SPB] > ip route print where bgp
+[panindv@R01.SPB] > ip route print where bgp
 Flags: X - disabled, A - active, D - dynamic, C - connect, S - static, r - rip, b - bgp, o - ospf, m - mme, B - blackhole, U - unreachable, P - prohibit 
  #      DST-ADDRESS        PREF-SRC        GATEWAY            DISTANCE
  0 ADb  10.100.1.2/32                      10.255.255.6            200
@@ -262,7 +262,7 @@ Flags: X - disabled, A - active, D - dynamic, C - connect, S - static, r - rip, 
 VRF:
 
 ```
-[tolya@R01.SPB] > ip route print where routing-mark=VRF_DEVOPS
+[panindv@R01.SPB] > ip route print where routing-mark=VRF_DEVOPS
 Flags: X - disabled, A - active, D - dynamic, C - connect, S - static, r - rip, b - bgp, o - ospf, m - mme, B - blackhole, U - unreachable, P - prohibit 
  #      DST-ADDRESS        PREF-SRC        GATEWAY            DISTANCE
  0 ADC  10.100.1.1/32      10.100.1.1      br100                     0
@@ -273,7 +273,7 @@ Flags: X - disabled, A - active, D - dynamic, C - connect, S - static, r - rip, 
 Связность между VRF:
 
 ```
-[tolya@R01.SPB] > ping 10.100.1.2 routing-table=VRF_DEVOPS src-address=10.100.1.1 c=3
+[panindv@R01.SPB] > ping 10.100.1.2 routing-table=VRF_DEVOPS src-address=10.100.1.1 c=3
   SEQ HOST                                     SIZE TTL TIME  STATUS                                                                                                                       
     0 10.100.1.2                                 56  62 1ms  
     1 10.100.1.2                                 56  62 1ms  
@@ -439,7 +439,7 @@ anantoliy@anantoliy-RLEF-XX:~/Desktop/Routing/2025_2026-introduction_in_routing-
 Выдача ip:
 
 ```
-[tolya@R01.SPB] > ip dhcp-server lease print 
+[panindv@R01.SPB] > ip dhcp-server lease print 
 Flags: X - disabled, R - radius, D - dynamic, B - blocked 
  #   ADDRESS                             MAC-ADDRESS       HOST-NAME                   SERVER                   RATE-LIMIT                   STATUS  LAST-SEEN                             
  0 D 10.100.1.254                        AA:C1:AB:BF:EA:D6                             dhcp-vpls                                             bound   1m23s                                 
