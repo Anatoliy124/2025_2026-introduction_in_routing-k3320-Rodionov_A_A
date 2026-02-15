@@ -193,7 +193,7 @@ round-trip min/avg/max = 2.391/2.540/2.647 ms
 Доказательство работы OSPF:
 
 ```
-[tolya@R01.HKI] > ip route print 
+[panindv@R01.HKI] > ip route print 
 Flags: X - disabled, A - active, D - dynamic, C - connect, S - static, r - rip, b - bgp, o - ospf, m - mme, B - blackhole, U - unreachable, P - prohibit 
  #      DST-ADDRESS        PREF-SRC        GATEWAY            DISTANCE
  0 ADC  10.10.1.0/30       10.10.1.2       ether2                    0
@@ -220,7 +220,7 @@ Flags: X - disabled, A - active, D - dynamic, C - connect, S - static, r - rip, 
 Доказательство работы MPLS:
 
 ```
-[tolya@R01.HKI] > mpls forwarding-table print 
+[panindv@R01.HKI] > mpls forwarding-table print 
 Flags: H - hw-offload, L - ldp, V - vpls, T - traffic-eng 
  #    IN-LABEL                                      OUT-LABELS                                   DESTINATION                    INTERFACE                                   NEXTHOP        
  0    expl-null                                    
@@ -234,7 +234,7 @@ Flags: H - hw-offload, L - ldp, V - vpls, T - traffic-eng
 Доказательство работы EoMPLS:
 
 ```
-[tolya@R01.NY] > interface vpls monitor SGIPC 
+[panindv@R01.NY] > interface vpls monitor SGIPC 
        remote-label: 21
         local-label: 21
       remote-status: 
@@ -244,7 +244,7 @@ Flags: H - hw-offload, L - ldp, V - vpls, T - traffic-eng
 ```
 
 ```
-[tolya@R01.SPB] > interface vpls monitor SGIPC 
+[panindv@R01.SPB] > interface vpls monitor SGIPC 
        remote-label: 21
         local-label: 21
       remote-status: 
